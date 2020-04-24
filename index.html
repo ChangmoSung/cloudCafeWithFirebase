@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cloud Cafe</h1>
+    
+    <div class="content">
+    
+        <form id="add-cafe-form">
+            <input type="text" name="name" placeholder="Cafe name">
+            <input type="text" name="city" placeholder="Cafe city">
+            <input type="file" name="image">
+            <button>add cafe</button>
+        </form>
+    
+        <ul id="cafe-list"></ul>
+    
+    </div>
+    
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCYpiSb9O9dYmkt2b-vrS57CQAratY_DHs",
+            authDomain: "changmo-firebase-learning.firebaseapp.com",
+            databaseURL: "https://changmo-firebase-learning.firebaseio.com",
+            projectId: "changmo-firebase-learning",
+            storageBucket: "changmo-firebase-learning.appspot.com",
+            messagingSenderId: "1078436117981",
+            appId: "1:1078436117981:web:01b4c2a01e7df80e900a34",
+            measurementId: "G-MZNSDJ6K4C"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots: true});
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
